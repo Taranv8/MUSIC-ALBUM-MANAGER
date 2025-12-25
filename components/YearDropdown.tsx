@@ -7,6 +7,7 @@ type Props = {
   onSelect: (year: number) => void;
   error?: string;
 };
+const PLACEHOLDER_VALUE = "YEAR";
 
 const START_YEAR = 1990;
 const END_YEAR = 2030;
@@ -19,14 +20,30 @@ export default function YearDropdown({ value, onSelect, error }: Props) {
       <Text style={styles.label}>Publishing Year</Text>
       <View style={styles.pickerWrapper}>
       <Picker
-  selectedValue={value ?? undefined}
-  onValueChange={(val) => val !== null && onSelect(val as number)}
+  selectedValue={value ?? PLACEHOLDER_VALUE}
+  onValueChange={(val) => {
+    if (val !== PLACEHOLDER_VALUE) {
+      onSelect(Number(val));
+    }
+  }}
+  itemStyle={{ color: "#000000" }} // ✅ IMPORTANT
 >
-  <Picker.Item label="Select year" value={null} />
+  <Picker.Item
+    label="Select year"
+    value={PLACEHOLDER_VALUE}
+    color="#9CA3AF"
+  />
+
   {years.map((year) => (
-    <Picker.Item key={year} label={year.toString()} value={year} />
+    <Picker.Item
+      key={year}
+      label={year.toString()}
+      value={year}
+      color="#000000"
+    />
   ))}
 </Picker>
+
 
 
       </View>

@@ -20,18 +20,20 @@ export default function FilterDropdown() {
       <Text style={styles.label}>Filter</Text>
 
       <View style={styles.pickerWrapper}>
-        <Picker
-          selectedValue={filter}
-          onValueChange={(value) => dispatch(setFilter(value))}
-        >
-          {FILTER_OPTIONS.map((option) => (
-            <Picker.Item
-              key={option.value}
-              label={option.label}
-              value={option.value}
-            />
-          ))}
-        </Picker>
+      <Picker
+  selectedValue={filter}
+  onValueChange={(value) => dispatch(setFilter(value))}
+>
+  {FILTER_OPTIONS.map((option) => (
+    <Picker.Item
+      key={option.value}
+      label={option.label}
+      value={option.value}
+      color="#000000"   // ✅ IMPORTANT
+    />
+  ))}
+</Picker>
+
       </View>
     </View>
   );

@@ -66,17 +66,19 @@ export default function SingerMultiSelect({ value, onChange, error }: Props) {
             <Chip key={singer} label={singer} onRemove={() => removeSinger(singer)} />
           ))}
 
-          <TextInput
-            style={styles.input}
-            value={text}
-            placeholder="Type to add singer"
-            onChangeText={(t) => {
-              setText(t);
-              setShowSuggestions(true);
-            }}
-            onSubmitEditing={handleSubmitEditing}
-            autoCorrect={false}
-          />
+<TextInput
+  style={styles.input}
+  value={text}
+  placeholder="Type to add singer"
+  placeholderTextColor="#94a3b8"   // ✅ ADD THIS
+  onChangeText={(t) => {
+    setText(t);
+    setShowSuggestions(true);
+  }}
+  onSubmitEditing={handleSubmitEditing}
+  autoCorrect={false}
+/>
+
         </View>
       </View>
 
