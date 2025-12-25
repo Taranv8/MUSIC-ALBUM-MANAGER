@@ -1,24 +1,27 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import 'react-native-reanimated';
-
-import { useColorScheme } from '@/hooks/use-color-scheme';
-
-export const unstable_settings = {
-  anchor: '(tabs)',
-};
+import { Stack } from "expo-router";
+import { Provider } from "react-redux";
+import { store } from "../redux/store";
 
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
-
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
+    <Provider store={store}>
+      <Stack
+        screenOptions={{
+          headerStyle: { backgroundColor: "#2563eb" },
+          headerTintColor: "#fff",
+          headerTitleStyle: { fontWeight: "600" },
+        }}
+      >
+        <Stack.Screen
+          name="index"
+          options={{ title: "Music Albums" }}
+        />
+        <Stack.Screen
+          name="add-album"
+          options={{ title: "Add New Music Album" }}
+        />
       </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    </Provider>
   );
 }
+
