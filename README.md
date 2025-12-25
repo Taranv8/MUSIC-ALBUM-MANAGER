@@ -1,53 +1,95 @@
-> Edited for use in IDX on 07/09/12
+# Music Album Manager
 
-# Welcome to your Expo app 👋
+A React Native app built with **Expo** to create and manage music albums. The app demonstrates reusable components, state management with **Redux**, and modern mobile UI features.
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+---
 
-## Get started
+## 📌 Project Prompt
 
-#### Android
+The app was developed based on the following requirements:
 
-Android previews are defined as a `workspace.onStart` hook and started as a vscode task when the workspace is opened/started.
+- Build a React Native mobile app using **Expo**, or a React web app if unfamiliar with React Native.
+- Focus on creating **small reusable components** and manage application state via **Redux**.
+- **Home Screen**:
+  - Displays a list of albums in card view
+  - Floating button to create a new album
+  - Filter dropdown to filter albums
+  - Preload 3 mock albums by default
+- **Add New Music Album** page:
+  - Album Title: Only alphanumeric characters with special characters [-,'&#()] allowed
+  - Publishing Year: Dropdown from 1990 to 2030
+  - Singers: Multi-select auto-suggest input
+    - Suggestions from a local JSON file of 50–60 singer names
+    - Can also add manually
+    - Selected singers are displayed as chips
+  - Focus on **validation errors** and **page state**
+  - Once created, album is added to the current React state
 
-Note, if you can't find the task, either:
-- Rebuild the environment (using command palette: `IDX: Rebuild Environment`), or
-- Run `npm run android -- --tunnel` command manually run android and see the output in your terminal. The device should pick up this new command and switch to start displaying the output from it.
+Other requirements included implementing reusable components such as:
+- `AlbumCard.tsx`
+- `AppButton.tsx`
+- `InputField.tsx`
+- `SingerMultiSelect.tsx`
+- `YearDropdown.tsx`
+- `FilterDropdown.tsx`
+- `FloatingButton.tsx`
+- Chip and validation components
 
-In the output of this command/task, you'll find options to open the app in a
+---
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## 🖥️ Features
 
-You'll also find options to open the app's developer menu, reload the app, and more.
+- **Create Albums** with title, year, and singers  
+- **Filter Albums** by year or singer  
+- **Reusable UI components** for consistency  
+- **State management** using Redux  
+- **Modern design** with validation and error handling  
+- **Offline-ready** with local JSON data for singers  
 
-#### Web
+---
 
-Web previews will be started and managred automatically. Use the toolbar to manually refresh.
+## 🛠️ Tech Stack
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- **React Native** + **Expo**
+- **Redux Toolkit** for state management
+- **TypeScript** for type safety
+- **Expo Router** for navigation
+- **React Native Paper / Custom UI Components** for UI
+- **Local JSON** for singer suggestions
 
-## Get a fresh project
+---
+**Install dependencies**
 
-When you're ready, run:
+`npm install`
 
-```bash
-npm run reset-project
-```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+**Start the Expo project**
 
-## Learn more
+`npx expo start`
 
-To learn more about developing your project with Expo, look at the following resources:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Press a to open Android simulator
 
-## Join the community
+Press i to open iOS simulator
 
-Join our community of developers creating universal apps.
+Or open in web browser
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+**Build for production (optional)**
+
+`npx expo build:android
+npx expo build:ios`
+
+## 📌 AI Prompts Used to Build This Project
+The project was developed with guidance from the following AI prompts:
+
+**UI Design Prompt:**
+AI for making UI design for the app to manage music albums, with home screen, add album page, filters, floating button, and reusable components.
+
+**File Structure Prompt:** 
+Guide me on the complete file structure for this React Native Expo project including app, components, redux, hooks, utils, data, styles, and types folders.
+
+**Recommendation System Prompt:**
+How the singer recommendation system works on the Add Album page and the code that it uses.
+
+**Dataset Creation Prompt:**
+Create dataset files for singers and albums, with JSON data to be used in the app.
