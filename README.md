@@ -4,7 +4,7 @@ A React Native app built with **Expo** to create and manage music albums. The ap
 
 ---
 install apk->https://github.com/Taranv8/MUSIC-ALBUM-MANAGER/releases/download/main/music-playlist-manager.apk
-## 📌 Project Prompt
+## 📌 About Project
 
 The app was developed based on the following requirements:
 
