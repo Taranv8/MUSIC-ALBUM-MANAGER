@@ -8,8 +8,7 @@ install apk->https://github.com/Taranv8/MUSIC-ALBUM-MANAGER/releases/download/ma
 
 The app was developed based on the following requirements:
 
-- Build a React Native mobile app using **Expo**, or a React web app if unfamiliar with React Native.
-- Focus on creating **small reusable components** and manage application state via **Redux**.
+
 - **Home Screen**:
   - Displays a list of albums in card view
   - Floating button to create a new album
